@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.cg.model.Item;
 
 @Service
-public interface IItemService  {
+public interface ItemServiceImpl  {
 	public Item addItem(Item item);
 	public Item updateItem(Item item,Long id);
 	public ResponseEntity<Item> removeItem(Long id);

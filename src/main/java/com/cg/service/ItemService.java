@@ -11,10 +11,10 @@ import com.cg.dao.ItemRepository;
 import com.cg.exception.ItemNotFoundException;
 import com.cg.model.Item;
 import com.cg.model.Restaurant;
-import com.cg.service.IItemService;
+import com.cg.service.ItemServiceImpl;
 
 @Service
-public class ItemService implements IItemService{
+public class ItemService implements ItemServiceImpl{
 	@Autowired
 	private ItemRepository itemRepository;
 	@Override

@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.cg.dao.LoginRepository;
 import com.cg.model.Login;
-import com.cg.service.ILoginService;
+import com.cg.service.LoginServiceImpl;
 
-public class LoginService implements ILoginService {
+public class LoginService implements LoginServiceImpl {
 	@Autowired
 	private LoginRepository loginRepository;
 	@Override

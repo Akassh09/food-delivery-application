@@ -11,10 +11,10 @@ import com.cg.dao.RestaurantRepository;
 import com.cg.exception.RestaurantNotFoundException;
 import com.cg.model.Item;
 import com.cg.model.Restaurant;
-import com.cg.service.IRestaurantService;
+import com.cg.service.RestaurantServiceImpl;
 
 @Service
-public class RestaurantService implements IRestaurantService{
+public class RestaurantService implements RestaurantServiceImpl{
 	@Autowired
 	private RestaurantRepository resRepository;
 

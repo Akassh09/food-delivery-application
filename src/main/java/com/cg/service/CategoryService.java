@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import com.cg.dao.CategoryRepository;
 import com.cg.exception.CategoryNotFoundException;
 import com.cg.model.Category;
-import com.cg.service.ICategoryService;
+import com.cg.service.CategoryServiceImpl;
 
 @Service
-public class CategoryService implements ICategoryService{
+public class CategoryService implements CategoryServiceImpl{
 	@Autowired
 	private CategoryRepository catRepository;
 

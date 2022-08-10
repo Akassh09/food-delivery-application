@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.cg.model.OrderDetails;
 
 @Service
-public interface IOrderService {
+public interface OrderServiceImpl {
 	public OrderDetails addOrder(OrderDetails od);
 	public OrderDetails updateOrder(OrderDetails od,Long id);
 	public ResponseEntity<OrderDetails> removeOrder(Long id);

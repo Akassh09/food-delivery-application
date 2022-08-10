@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import com.cg.model.Login;
 
 @Service
-public interface ILoginService {
+public interface LoginServiceImpl {
 	public  Login signin(Login login);
 	public  Login signOut(Login login);
 

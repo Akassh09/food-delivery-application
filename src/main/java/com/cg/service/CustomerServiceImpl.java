@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.cg.model.Customer;
 
 @Service
-public interface ICustomerService {
+public interface CustomerServiceImpl {
 	public Customer addCustomer(Customer customer);
 	public Customer updateCustomer(Customer customer,Long id);
 	public ResponseEntity<Customer> removeCustomer(Long id);

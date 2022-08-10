@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import com.cg.dao.CustomerRepository;
 import com.cg.exception.CustomerNotFoundException;
 import com.cg.model.Customer;
-import com.cg.service.ICustomerService;
+import com.cg.service.CustomerServiceImpl;
 
 @Service
-public class CustomerService implements ICustomerService {
+public class CustomerService implements CustomerServiceImpl {
 	@Autowired
 	private CustomerRepository custRepository;
 

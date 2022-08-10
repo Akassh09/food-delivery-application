@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.cg.model.Restaurant;
 
 @Service
-public interface IRestaurantService {
+public interface RestaurantServiceImpl {
       public Restaurant addRestaurant(Restaurant res);
       public Restaurant updateRestaurant(Restaurant res,Long id);
       public ResponseEntity<Restaurant> removeRestaurant(Long id);

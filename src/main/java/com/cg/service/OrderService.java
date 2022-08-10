@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import com.cg.dao.OrderRepository;
 import com.cg.exception.OrderNotFoundException;
 import com.cg.model.OrderDetails;
-import com.cg.service.IOrderService;
+import com.cg.service.OrderServiceImpl;
 
 @Service
-public class OrderService implements IOrderService {
+public class OrderService implements OrderServiceImpl {
 	@Autowired 
 	private OrderRepository odRepository;
 

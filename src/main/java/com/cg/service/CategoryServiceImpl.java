@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.cg.model.Category;
 
 @Service
-public interface ICategoryService {
+public interface CategoryServiceImpl {
 	public Category addCategory(Category cat);
 	public Category updateCategory(Category cat,Long id);
 	public ResponseEntity<Category> removeCategory(Long id);

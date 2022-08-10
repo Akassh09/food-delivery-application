@@ -7,7 +7,7 @@ import com.cg.model.FoodCart;
 import com.cg.model.Item;
 
 @Service
-public interface ICartService {
+public interface CartServiceImpl {
     public FoodCart createCart(FoodCart cart);
     public FoodCart addItemToCart(Item item,Long id);
     public FoodCart increaseQuantity(Item item,int quantity,Long id);

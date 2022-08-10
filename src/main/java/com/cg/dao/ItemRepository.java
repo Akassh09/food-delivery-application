@@ -8,4 +8,5 @@ import com.cg.model.Item;
 @Repository
 public interface ItemRepository extends JpaRepository<Item,Long> {
 
+
 }

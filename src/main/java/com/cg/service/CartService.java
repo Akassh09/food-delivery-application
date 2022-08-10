@@ -8,10 +8,10 @@ import com.cg.dao.CartRepository;
 import com.cg.exception.FoodCartNotFoundException;
 import com.cg.model.FoodCart;
 import com.cg.model.Item;
-import com.cg.service.ICartService;
+import com.cg.service.CartServiceImpl;
 
 @Service
-public class CartService implements ICartService {
+public class CartService implements CartServiceImpl {
 	@Autowired
 	private CartRepository fcRepository;
 
