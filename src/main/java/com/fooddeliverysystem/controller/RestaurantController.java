@@ -1,6 +1,7 @@
 package com.fooddeliverysystem.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.fooddeliverysystem.dao.RestaurantRepository;
 import com.fooddeliverysystem.model.Restaurant;
 import com.fooddeliverysystem.service.RestaurantServiceImpl;
 
@@ -22,6 +23,11 @@ import com.fooddeliverysystem.service.RestaurantServiceImpl;
 public class RestaurantController {
 	@Autowired
 	private RestaurantServiceImpl resService;
+	
+	@Autowired
+	private RestaurantRepository respo;
+	
+	
 	@PostMapping("/restaurants")
 	public Restaurant addRestaurant(@RequestBody Restaurant res) {
 		return resService.addRestaurant(res);
@@ -34,10 +40,21 @@ public class RestaurantController {
 	public ResponseEntity<Restaurant> removeRestaurant(@PathVariable Long id) {
 		return resService.removeRestaurant(id);
 	}
-	@GetMapping("restaurants/{id}")
-	public Restaurant viewRestaurantsById(@PathVariable Long id) {
-		return resService.viewRestaurantsById(id);
-	}
+    
+	@GetMapping("getrestaurant/{id}")
+	public Restaurant getRestaurantDetails(@PathVariable("id") long id) {
+		Optional<Restaurant> op=respo.findById(id);
+		if(op.isPresent()) {
+			Restaurant res=op.get();
+			return res;
+		}
+		else {
+			return null;
+		}
+		
+     }
+	
+	
 	@GetMapping("restaurants")
 	public List<Restaurant> viewAllRestaurants(){
 		return resService.viewAllRestaurants();

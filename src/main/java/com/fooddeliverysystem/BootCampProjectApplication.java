@@ -9,5 +9,5 @@ public class BootCampProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BootCampProjectApplication.class, args);
 	}
-
+    
 }

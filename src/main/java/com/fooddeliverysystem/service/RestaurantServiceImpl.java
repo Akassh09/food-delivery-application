@@ -67,8 +67,7 @@ public class RestaurantServiceImpl implements RestaurantService{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return resItem;
-		
+		return resItem;	
 	}
 
 	@Override

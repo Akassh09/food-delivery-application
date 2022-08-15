@@ -2,6 +2,8 @@ package com.fooddeliverysystem.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,23 +23,23 @@ import com.fooddeliverysystem.service.CustomerServiceImpl;
 public class CustomerController {
     @Autowired
     private CustomerServiceImpl custService;
-    @PostMapping("/customers")
-    public Customer addCustomer(@RequestBody Customer customer) {
+    @PostMapping("/addcustomer")
+    public Customer addCustomer(@RequestBody @Valid Customer customer) {
     	return custService.addCustomer(customer);
     }
-    @PutMapping("/customers/{id}")
+    @PutMapping("/updatecustomer/{id}")
     public Customer updateCustomer(@RequestBody Customer customer,@PathVariable Long id) {
     	return custService.updateCustomer(customer, id);
     }
-    @DeleteMapping("/customers/{id}")
+    @DeleteMapping("/deletecustomerbyid/{id}")
     public ResponseEntity<Customer> removeCustomer(@PathVariable Long id){
     	return custService.removeCustomer(id);
     }
-    @GetMapping("/customers/{id}")
+    @GetMapping("/getcustomerbyid/{id}")
     public Customer viewCustomerById(@PathVariable Long id) {
     	return custService.viewCustomerById(id);
     }
-    @GetMapping("/customers")
+    @GetMapping("/getallcustomers")
     public List<Customer> viewAllCustomers() {
     	return custService.viewAllCustomers();
     }

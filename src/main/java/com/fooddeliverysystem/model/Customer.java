@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import com.fooddeliverysystem.model.Address;
 
@@ -16,11 +19,14 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long customerId;
+	@NotEmpty(message = "First Name Should  Not Be Empty!")
 	private String firstName;
+	@NotEmpty(message = "Last Name Should  Not Be Empty!")
 	private String lastName;
 	private int age;
 	private String gender;
 	private String mobileNumber;
+	@Email
 	private String email;
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="addressId")

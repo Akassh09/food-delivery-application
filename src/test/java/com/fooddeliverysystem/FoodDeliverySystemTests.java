@@ -10,15 +10,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.fooddeliverysystem.dao.CustomerRepository;
+import com.fooddeliverysystem.dao.RestaurantRepository;
 import com.fooddeliverysystem.model.Customer;
+import com.fooddeliverysystem.model.Restaurant;
+import com.fooddeliverysystem.service.CustomerService;
 
 
 @SpringBootTest
-class FoodDeliverySystemApplicationTests {
+class FoodDeliverySystemTests {
 
 	
 	@Autowired
 	private CustomerRepository repo;
+	
+	@Autowired
+	private CustomerService reservice;
+	
+	@Autowired
+	private RestaurantRepository respo;
 	
 	@Test
 	void testAddCustomer() {
@@ -81,6 +90,29 @@ class FoodDeliverySystemApplicationTests {
 		repo.findAll().forEach(list::add);
 		assertThat(list.size()).isGreaterThanOrEqualTo(0);
 		System.out.println("##10MARKS##");
+	}
+	
+	@Test
+	void testAddRestaurant() {
+       Restaurant res=new Restaurant();
+       res.setRestaurantId((long) 1);
+       res.setRestaurantName("Kiranshree");
+       res.setManagerName("Sujit");
+       res.setResPincode("781009");
+       res.setContactNumber("9957223570");
+       Restaurant rest=respo.save(res);
+       assertThat(rest.getRestaurantId()).isEqualTo(1);
+       System.out.println("#####10MARKS#####");
+	}
+	
+	@Test
+	void testDeleteRestaurantById() {
+		Optional<Restaurant> op = respo.findById((long) 1);
+		if (op.isPresent()) {
+			Restaurant res = op.get();
+			assertThat(res.getRestaurantId()).isEqualTo(1);
+			System.out.println("####10MARKS####");
+		}
 	}
 
 }
