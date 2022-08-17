@@ -2,6 +2,8 @@ package com.fooddeliverysystem.service;
 
 import java.util.List;
 
+import javax.validation.constraints.Email;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -79,6 +81,16 @@ public class CustomerServiceImpl implements CustomerService {
 		// TODO Auto-generated method stub
 		return this.custRepository.findAll();
 	}
+
+	@Override
+	public  Customer login(String username, String password) {
+		// TODO Auto-generated method stub
+		return custRepository.findByUserPassword(username, password);
+	}
+
+	
+
+	
 
 	
        

@@ -21,6 +21,7 @@ public class Restaurant {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long restaurantId;
     private String restaurantName;
+    private String password;
     @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="addressId")
     @JsonManagedReference
@@ -38,11 +39,14 @@ public class Restaurant {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Restaurant(Long restaurantId, String restaurantName, Address address, String managerName, String res_pincode,
-			String contactNumber, List<Item> itemList) {
+	
+
+	public Restaurant(Long restaurantId, String restaurantName, String password, Address address, String managerName,
+			String res_pincode, String contactNumber, List<Item> itemList) {
 		super();
 		this.restaurantId = restaurantId;
 		this.restaurantName = restaurantName;
+		this.password = password;
 		this.address = address;
 		this.managerName = managerName;
 		this.res_pincode = res_pincode;
@@ -50,10 +54,13 @@ public class Restaurant {
 		this.itemList = itemList;
 	}
 
+
+
 	@JsonManagedReference
 	public List<Item> getItemList() {
 		return itemList;
 	}
+
 	public void setItemList(List<Item> itemList) {
 		this.itemList = itemList;
 	}
@@ -62,51 +69,84 @@ public class Restaurant {
 		return restaurantId;
 	}
 
+
+
 	public void setRestaurantId(Long restaurantId) {
 		this.restaurantId = restaurantId;
 	}
+
+
 
 	public String getRestaurantName() {
 		return restaurantName;
 	}
 
+
+
 	public void setRestaurantName(String restaurantName) {
 		this.restaurantName = restaurantName;
 	}
+
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
 
 	public Address getAddress() {
 		return address;
 	}
 
+
+
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+
 
 	public String getManagerName() {
 		return managerName;
 	}
 
+
+
 	public void setManagerName(String managerName) {
 		this.managerName = managerName;
 	}
 
-	public String getResPincode() {
+
+
+	public String getRes_pincode() {
 		return res_pincode;
 	}
 
-	public void setResPincode(String res_pincode) {
+
+
+	public void setRes_pincode(String res_pincode) {
 		this.res_pincode = res_pincode;
 	}
+
+
 
 	public String getContactNumber() {
 		return contactNumber;
 	}
 
+
+
 	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
 	}
 	
-
 }
 
 

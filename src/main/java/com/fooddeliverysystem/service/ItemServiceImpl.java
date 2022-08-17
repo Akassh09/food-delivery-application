@@ -67,13 +67,19 @@ public class ItemServiceImpl implements ItemService{
 		// TODO Auto-generated method stub
 		return itemRepository.findAll();
 	}
-	//@Override
-	/*public List<Item> viewItemsByRestaurant(String resName){
+	@Override
+	public List<Item> viewItemsByRestaurant(String resName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	/*@Override
+	public List<Item> viewItemsByRestaurant(String resName){
 		List<Item> items=new ArrayList<Item>();
 		List<Item> i=itemRepository.findAll();
 	
 		for(Item item:i) {
-			List<Restaurant> r=item.getRes();
+			List<Restaurant> r=item.;
 			for(Restaurant resItem:r) {
 				if(resItem.getRestaurantName().equals(resName))
 					items.add(item);

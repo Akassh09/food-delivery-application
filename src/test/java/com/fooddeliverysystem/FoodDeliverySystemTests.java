@@ -98,7 +98,7 @@ class FoodDeliverySystemTests {
        res.setRestaurantId((long) 1);
        res.setRestaurantName("Kiranshree");
        res.setManagerName("Sujit");
-       res.setResPincode("781009");
+       res.setRes_pincode("781009");
        res.setContactNumber("9957223570");
        Restaurant rest=respo.save(res);
        assertThat(rest.getRestaurantId()).isEqualTo(1);

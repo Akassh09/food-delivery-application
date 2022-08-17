@@ -14,6 +14,6 @@ public interface ItemService  {
 	public ResponseEntity<Item> removeItem(Long id);
 	public Item viewItemById(Long id);
 	public List<Item> viewAllItems();
-	//public List<Item> viewItemsByRestaurant(String resName);
+	public List<Item> viewItemsByRestaurant(String resName);
 
 }

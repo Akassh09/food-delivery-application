@@ -104,6 +104,12 @@ public class RestaurantServiceImpl implements RestaurantService{
 		// TODO Auto-generated method stub
 		return resRepository.findByPincode(res_pincode);
 	}
+
+	@Override
+	public Restaurant reslogin(String restaurantName, String password) {
+		// TODO Auto-generated method stub
+		return resRepository.findByUserPassword(restaurantName, password);
+	}
 	
 
 }
