@@ -46,6 +46,7 @@ public class CustomerController {
     public Customer viewCustomerById(@PathVariable Long id) {
     	return custService.viewCustomerById(id);
     }
+    
     @GetMapping("/getallcustomers")
     public List<Customer> viewAllCustomers() {
     	return custService.viewAllCustomers();
