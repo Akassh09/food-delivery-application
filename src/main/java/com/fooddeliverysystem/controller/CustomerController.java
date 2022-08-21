@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fooddeliverysystem.dao.CustomerRepository;
 import com.fooddeliverysystem.model.Customer;
 import com.fooddeliverysystem.model.Restaurant;
 import com.fooddeliverysystem.service.CustomerService;
@@ -30,6 +31,9 @@ public class CustomerController {
     @Autowired
     private CustomerServiceImpl custService;
     
+    @Autowired
+    private CustomerRepository custrepo;
+    
     @PostMapping("/addcustomer")
     public Customer addCustomer(@RequestBody @Valid Customer customer) {
     	return custService.addCustomer(customer);
@@ -39,8 +43,9 @@ public class CustomerController {
     	return custService.updateCustomer(customer, id);
     }
     @DeleteMapping("/deletecustomerbyid/{id}")
-    public ResponseEntity<Customer> removeCustomer(@PathVariable Long id){
-    	return custService.removeCustomer(id);
+    public ResponseEntity<String> removeCustomer(@PathVariable Long id){
+    	custrepo.deleteById(id);
+		return new ResponseEntity<String>("Delete-successfully",HttpStatus.OK);
     }
     @GetMapping("/getcustomerbyid/{id}")
     public Customer viewCustomerById(@PathVariable Long id) {

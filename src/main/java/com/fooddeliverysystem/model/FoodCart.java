@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fooddeliverysystem.model.Customer;
 import com.fooddeliverysystem.model.Item;
 
@@ -24,9 +26,12 @@ public class FoodCart {
 	private Long id;
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="customerId")
+	@JsonManagedReference
+    @JsonIgnore
 	private Customer cust;
 	@OneToMany(cascade=CascadeType.ALL,orphanRemoval=true,targetEntity=Item.class)
-	
+	@JsonManagedReference
+    @JsonIgnore
 	private List<Item> item=new ArrayList<>();
 	public FoodCart() {
 		super();
