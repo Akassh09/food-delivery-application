@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -38,8 +39,9 @@ public class ItemController {
 		return itemService.updateItem(item, id);
 	}
 	@DeleteMapping("/items/{id}")
-	public ResponseEntity<Item> removeItem(@PathVariable Long id){
-		return itemService.removeItem(id);
+	public ResponseEntity<String> removeItem(@PathVariable Long id){
+		itemrepo.deleteById(id);
+		return new ResponseEntity<String>("Delete-successfully",HttpStatus.OK);
 	}
 	
 	@GetMapping("getitems/{id}")

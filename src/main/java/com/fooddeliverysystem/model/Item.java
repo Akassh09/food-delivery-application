@@ -22,7 +22,7 @@ public class Item {
 	private int quantity;
 	private double cost;
 
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "restaurantId")
 	@JsonBackReference
 	private Restaurant res;

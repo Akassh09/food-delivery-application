@@ -20,6 +20,7 @@ import com.fooddeliverysystem.model.Checkout;
 @CrossOrigin("*")
 public class CheckoutController {
 	
+	@Autowired
 	private CheckoutRepository crepo;
 
 	@PostMapping("/checkout")
